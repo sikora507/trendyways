@@ -34,20 +34,30 @@
         <h1>
 <a name="trendyways" class="anchor" href="#trendyways"><span class="octicon octicon-link"></span></a>trendyways</h1>
 
-<p>Small javascrip library containing methods to use in financial technical analysis of time series.
-It is intended to be a simple library, for most of the methods the input is just an array of values to get as output 
-a list of values.</p>
+<p>Small javascrip library containing methods to use in financial technical analysis of stock time series.
+It is intended to be a simple library, suitable to be inserted in any visulization workflow to generate results on the fly.</p>
 
 <p>General purpose functions:</p>
 
 <ul>
-<li>Series min, max, mean and standar deviation.</li>
+<li>series min.</li>
+<li>series max.</li>
+<li>series mean.</li>
+<li>series standar deviation.</li>
 </ul><p>Averages and intervals:</p>
 
 <ul>
-<li>Moving Average of n-th order.</li>
-<li>Bollinger Bands (window n, k value).</li>
-</ul><p>Support and resistance calculation:</p>
+<li>MA: simple moving average.</li>
+<li>EMA: exponential moving average.</li>
+<li>WMA: weighted moving average.</li>
+<li>Bollinger bands (window n, k value).</li>
+</ul><p>Error methods:</p>
+
+<ul>
+<li>series MSE</li>
+<li>series RMSE</li>
+<li>series MAE</li>
+</ul><p>Support and resistance methods:</p>
 
 <ul>
 <li>Floor pivot points (resistances R1, R2 and R3; and supports S1, S2 and S3).</li>
@@ -55,6 +65,11 @@ a list of values.</p>
 <li>Woodies Points (resistances R1,R2; and supports S1 and S2).</li>
 <li>Camarilla Points (resistances R1,R2,R3 and R4; supports S1,S2,S3 and S4).</li>
 <li>Fibonacci Retracements (for both uptrend and downtrend series).</li>
+</ul><p>Indicators:</p>
+
+<ul>
+<li>On-Balance Volume (obv)</li>
+<li>Price and Volume Trend (pvt)</li>
 </ul><p>For the testing part, fantastic qunit.js testing library is used.
 Tests can be run from the file tests.html once you fetch this
 repository, <a href="https://github.com/figurebelow/trendyways">https://github.com/figurebelow/trendyways</a></p>
