@@ -133,9 +133,10 @@ describe ("Indicators", function () {
     {
       assert.deepEqual (macdResults[i].macd.signal.toFixed(5), signalTest[i].toFixed(5), "Testing signal value " + i);
     }
-    for (var i = 0; i < macdResults[i].macd.hist.length; i++)
+    assert.equal (Trendyways.utils.flat(macdResults,"hist").length, signalTest.length, "MACD hist values match length");
+    for (var i = 0; i < Trendyways.utils.flat(macdResults,"hist").length; i++)
     {
-      assert.deepEqual (macdResults[i].hist.toFixed(5), (macdTest[i] - signalTest[i]).toFixed(5), "Testing hist value " + i);
+      assert.deepEqual (macdResults[i].macd.hist.toFixed(5), (macdTest[i] - signalTest[i]).toFixed(5), "Testing hist value " + i);
     }
   });
 

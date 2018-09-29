@@ -134,11 +134,10 @@ module.exports.macd = function (closeValues, targetAttr)
   {
     signalLine.unshift({macd:0}); // append again 25 zeros
   }
-  histLine = vectors.diffVectors(macdLine, signalLine, "macd");
   utils.fill(signalLine, "ema", 0);
   macdItems = [];
   for (var i = 0; i < macdLine.length; i++) {
-    macdItems.push({macd:{line:macdLine[i].macd, signal:signalLine[i].ema, hist:histLine[i]}});
+    macdItems.push({macd:{line:macdLine[i].macd, signal:signalLine[i].ema, hist:macdLine[i].macd - signalLine[i].ema}});
   }
   var returnList = closeValues.slice()
   return utils.reverseAppend (returnList, macdItems, "macd");
