@@ -10,7 +10,7 @@
       "email": "rbfrancos@gmail.com"
     }
   ],
-  "main": "index.js",
+  "main": "./src/index",
   "repository": {
     "type": "git",
     "url": "https://github.com/sikora507/trendyways.git"
