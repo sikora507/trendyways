@@ -6,7 +6,10 @@
  *
  * Source: http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:average_directional_index_adx
  */
-adx = function (values) {
+var windowOp = require('../core/windowOp');
+var vectors = require('../core/vectors');
+
+module.exports = function (values) {
 	dmWindow = function (serie) {
 		var sum = 0;
 		todayMax = serie[1].h - serie[0].h
@@ -27,9 +30,9 @@ adx = function (values) {
 	result = windowOp(values, 2, dmWindow);
 	result.unshift({dmp:0, dmn:0, tr:0});
 
-	firstTr14 = sumVector(result.slice(0, 15), "tr");
-	firstDM14Pos = sumVector(result.slice(0,15), "dmp");
-	firstDM14Neg = sumVector(result.slice(0,15), "dmn");
+	firstTr14 = vectors.sumVector(result.slice(0, 15), "tr");
+	firstDM14Pos = vectors.sumVector(result.slice(0,15), "dmp");
+	firstDM14Neg = vectors.sumVector(result.slice(0,15), "dmn");
 	result[14].tr14 = firstTr14;
 	result[14].dmp14 = firstDM14Pos;
 	result[14].dmn14 = firstDM14Neg;
@@ -50,7 +53,7 @@ adx = function (values) {
 		result[i].dx = 100 * (result[i].diff / result[i].sum);
 		if (i >= 28) {
 			if (i == 28)
-				adx = avgVector(result.slice(i-14, i), "dx")
+				adx = vectors.avgVector(result.slice(i-14, i), "dx")
 			else {
 				adx = ((result[i-1].adx * 13 ) + result[i].dx)/14
 			}

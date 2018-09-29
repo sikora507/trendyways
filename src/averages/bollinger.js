@@ -1,4 +1,7 @@
-
+var utils = require('../core/utils');
+var averages = require('../averages/averages');
+var windowOp = require('../core/windowOp');
+var statistics = require('../core/statistics');
 /*
  * Returns the Bollinger Band values as an object
  * containing three arrays:
@@ -14,10 +17,10 @@
  * elems for a elem and upper and lower bands are
  * located +2*sd and -2*sd from the central moving average.
  */
-bollinger = function (list, n, k, targetAttr) {
-  targetAttr = valueIfUndef(targetAttr, ["c"])
-  var movingAvg = ma (list, n, targetAttr);
-  var movingSd = windowOp (list, n, sd, targetAttr);
+module.exports = function (list, n, k, targetAttr) {
+  targetAttr = utils.valueIfUndef(targetAttr, ["c"])
+  var movingAvg = averages.ma (list, n, targetAttr);
+  var movingSd = windowOp (list, n, statistics.sd, targetAttr);
   var upperBand = new Array();
   var lowerBand = new Array();
   var movingAvgElem = 0;

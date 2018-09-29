@@ -1,13 +1,15 @@
+var vectors = require('../core/vectors');
 /**
  * @description Returns the MSE error of two series
  * @param{array} series1 values array
  * @param{array} series2 values array
  * @return{value} the mse error
  */
-mse = function (series1, series2)
+var mse = function (series1, series2)
 {
-  return avgVector (powVector (diffVectors(series1, series2)));
+  return vectors.avgVector (vectors.powVector (vectors.diffVectors(series1, series2)));
 }
+module.exports.mse = mse;
 
 ////////////////////////////////////////////////////////
 
@@ -17,7 +19,7 @@ mse = function (series1, series2)
  * @param{array} series2 values array
  * @return{value} the RMSE error
  */
-rmse = function (series1, series2)
+module.exports.rmse = function (series1, series2)
 {
   return Math.sqrt (mse(series1, series2));
 }
@@ -30,7 +32,7 @@ rmse = function (series1, series2)
  * @param{array} series2 values array
  * @return{value} the mae error
  */
-mae = function (series1, series2)
+module.exports.mae = function (series1, series2)
 {
-  return avgVector(absVector(diffVectors(series1, series2)));
+  return vectors.avgVector(vectors.absVector(vectors.diffVectors(series1, series2)));
 }

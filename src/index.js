@@ -1,0 +1,10 @@
+module.exports.utils = require('./core/utils');
+module.exports.statistics=require('./core/statistics');
+module.exports.vectors = require('./core/vectors');
+module.exports.windowOp = require('./core/windowOp');
+module.exports.error = require('./error/error');
+module.exports.averages = require('./averages/averages');
+module.exports.bollinger = require('./averages/bollinger');
+module.exports.adx = require('./indicators/adx');
+module.exports.indicators = require('./indicators/indicators');
+module.exports.sup_res = require('./sup_res/sup_res');

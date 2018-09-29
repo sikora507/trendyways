@@ -1,5 +1,5 @@
 {
-  "name": "trendyways",
+  "name": "trendyways-module",
   "preferGlobal": true,
   "version": "0.4.2",
   "author": "Ruben Afonso <rbfrancos@gmail.com>",
@@ -10,6 +10,7 @@
       "email": "rbfrancos@gmail.com"
     }
   ],
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/rubenafo/trendyways.git"
@@ -36,7 +37,6 @@
     "node": ">=0.10.15"
   },
   "scripts": {
-    "test": "mocha tests",
-    "test-travis": "./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- -R spec ./tests"
+    "test": "mocha tests"
   }
 }

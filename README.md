@@ -1,9 +1,7 @@
-[![Build Status](https://travis-ci.org/rubenafo/trendyways.svg?branch=master)](https://travis-ci.org/rubenafo/trendyways)
-[![Coverage Status](https://coveralls.io/repos/github/rubenafo/trendyways/badge.svg?branch=master)](https://coveralls.io/github/rubenafo/trendyways?branch=master)
-[![npm version](https://badge.fury.io/js/trendyways.svg)](https://badge.fury.io/js/trendyways)
 
-Trendyways
+Trendyways-Module
 ==========
+Trendyways library by rubenafo wrapped into javascript module.
 
 Small javascript library containing methods to be used in financial technical analysis of stock time series.
 It is intended to be a simple library, suitable to be inserted in any visulization workflow to generate results on the fly.
@@ -12,15 +10,18 @@ Compatibily: IE[7,8,9,...], Chrome and Firefox.
 
 How to use it
 -------------
-The minified version of trendyways ([trendyways.min.js]) (https://github.com/rubenafo/trendyways/blob/master/trendyways.min.js) is enough to use it in a production environment.   
-A non minified version is available in the same dir ([trendyways.js])(https://github.com/rubenafo/trendyways/blob/master/trendyways.js)
-
-Building from source is also possible if nodejs is installed on your system. In this case after clone this repo, run 
- 
-   make all
-
-to create the trendyways.js lib and related docs.
-
+Install via npm:
+```
+npm i trendyways-module
+```
+Then in your javascript file use require or import syntax:
+```
+import trendyways from 'trendyways-module'
+```
+And you are ready to use its functions like
+```
+var macd = trendyways.indicators.macd(....);
+```
 Documentation
 -------------
 Please refer to the wiki of the project to access the latest documentation: https://github.com/rubenafo/trendyways/wiki
@@ -63,8 +64,7 @@ __Technical Indicators:__
 
 Tests
 -------------
-At the top of this README there is a link to the coverage and test results from Travis and CoverAll.
 If you want to run your tests locally, use mocha to run the /tests files:
 ```
-mocha ./tests
+npm run test
 ```
