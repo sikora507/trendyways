@@ -6,7 +6,6 @@ Trendyways library by rubenafo wrapped into javascript module.
 Small javascript library containing methods to be used in financial technical analysis of stock time series.
 It is intended to be a simple library, suitable to be inserted in any visulization workflow to generate results on the fly.
 
-Compatibily: IE[7,8,9,...], Chrome and Firefox.
 
 How to use it
 -------------
